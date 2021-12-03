@@ -1,15 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net472</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>\\192.168.1.68\partage\mono-inverter-poller\MppSolarPoller\bin\Debug\</OutputPath>
+    <OutputPath></OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MppSolarPoller.Base\MppSolarPoller.Base.csproj" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="cp $(OutDir)/$(TargetFileName) $(SolutionDir)/$(SolutionName)/$(OutDir)" />
+  </Target>
 
 </Project>

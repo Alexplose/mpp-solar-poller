@@ -35,7 +35,7 @@ namespace MppSolarPoller.Common
             System.Buffer.BlockCopy(crc, 0, toWrite, cmd.Length, crc.Length);
             toWrite[toWrite.Length - 1] = 0x0d;
             //Console.WriteLine(System.Text.Encoding.ASCII.GetString(toWrite));
-            hidStream.Write(toWrite);
+            hidStream.Write(toWrite, 0, toWrite.Length);
             var buf = new byte[Math.Min(9, ResponseSize)];
             var resBuffer = new byte[ResponseSize];
             int read = 0;

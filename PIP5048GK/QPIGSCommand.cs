@@ -39,7 +39,7 @@ namespace PIP5048GK
 
         public override void Parse(string rawData)
         {
-            var dataElem = rawData.Substring(1).Split(" ", StringSplitOptions.RemoveEmptyEntries);
+            var dataElem = rawData.Substring(1).Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
             Console.WriteLine(rawData);
             /*int i = 0;
 

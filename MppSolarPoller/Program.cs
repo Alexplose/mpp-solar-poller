@@ -57,10 +57,10 @@ namespace mpp_solar_poller
                     cmd.ModelName = "TestModel";
                 else 
                     cmd.ProcessCommand(hidStream);
-                var modelAssembly = Assembly.LoadFrom(cmd.ModelName);
+                var modelAssembly = Assembly.LoadFrom(cmd.ModelName+".dll");
 
                 List<ICommand> commands = modelAssembly.GetExportedTypes().Where(c => c.BaseType == typeof(Command))
-                    .Select(c => { var cmd = Activator.CreateInstance(c) as ICommand; cmd.PropertyChanged += Cmd_PropertyChanged; return cmd; }).ToList();
+                    .Select(c => { var activatedCommand = Activator.CreateInstance(c) as ICommand; activatedCommand.PropertyChanged += Cmd_PropertyChanged; return activatedCommand; }).ToList();
 
                 
 

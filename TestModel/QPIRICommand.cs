@@ -75,7 +75,7 @@ namespace TestModel
 
 
             Console.WriteLine(rawData);
-            var dataElem = rawData.Replace("(", "").Split(" ", StringSplitOptions.RemoveEmptyEntries);
+            var dataElem = rawData.Replace("(", "").Split(' ');
 
             //int i = 0;
             //foreach (var item in dataElem)
