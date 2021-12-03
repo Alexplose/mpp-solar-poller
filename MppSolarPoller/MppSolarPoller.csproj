@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>MppSolarPoller</RootNamespace>
+    <PackageId>MppSolarPoller</PackageId>
+    <AssemblyName>MppSolarPoller</AssemblyName>
+    <Authors>Alexplose</Authors>
+    <Product />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HidSharp" Version="2.1.0" />
+    <PackageReference Include="M2Mqtt" Version="4.3.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MppSolarPoller.Base\MppSolarPoller.Base.csproj" />
+  </ItemGroup>
+
+</Project>
